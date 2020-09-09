@@ -1,0 +1,100 @@
+<h2>datepicker works!</h2>
+
+<mat-card>
+  <mat-card-content>
+    <h3 class="example-h2">Date Picker</h3>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <h3>With mouse icon</h3>
+  <mat-card-content>
+    <input [matDatepicker]="basicDatepicker" placeholder="Choose your date">
+    <mat-datepicker-toggle [for]="basicDatepicker">
+        <mat-icon matDatepickerToggleIcon>
+            mouse
+        </mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #basicDatepicker></mat-datepicker>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <h3>Start with a year</h3>
+  <mat-card-content>
+    <input matInput [matDatepicker]="pickeryear" placeholder="Choose a date">
+    <mat-datepicker-toggle [for]="pickeryear"></mat-datepicker-toggle>
+    <mat-datepicker #pickeryear startView="year"></mat-datepicker>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <h3>Start at a preset date</h3>
+  <mat-card-content>
+    <input matInput [matDatepicker]="startatpicker" placeholder="Choose a date">
+    <mat-datepicker-toggle [for]="startatpicker"></mat-datepicker-toggle>
+    <mat-datepicker #startatpicker [startAt]="startDate"></mat-datepicker>
+  </mat-card-content>
+</mat-card>
+
+<mat-form-field>
+  <h3>With a date range</h3>
+    <input #minmaxInput matInput 
+    [min]="minDate" 
+    [max]="maxDate"
+    [matDatepicker]="minmaxvalidation" 
+    placeholder="Pick a date">
+  <mat-datepicker-toggle matSuffix [for]="minmaxvalidation">
+     </mat-datepicker-toggle>
+  <mat-datepicker #minmaxvalidation></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+    <h3>Disabled input</h3>
+    <input matInput [matDatepicker]="disabletext" placeholder="" disabled>
+    <mat-datepicker-toggle matSuffix [for]="disabletext"></mat-datepicker-toggle>
+    <mat-datepicker #disabletext disabled="false">
+    </mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+  <h3>Disable typing</h3>
+    <input matInput [matDatepicker]="disableTyping" placeholder="disable typing" readonly>
+    <mat-datepicker-toggle matSuffix [for]="disableTyping"></mat-datepicker-toggle>
+    <mat-datepicker #disableTyping color="warn"></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+  <h3>Touch Ui mode</h3>
+    <input matInput [matDatepicker]="touchUi" placeholder="mobile touchUi">
+    <mat-datepicker-toggle matSuffix [for]="touchUi"></mat-datepicker-toggle>
+    <mat-datepicker touchUi="true" #touchUi></mat-datepicker>
+</mat-form-field>
+
+<mat-card>
+  <h3>Tooltip</h3>
+  <mat-card-content>
+    <button mat-raised-button
+        matTooltip="Tooltips in Angular">
+        Tooltip
+    </button>
+    <button mat-raised-button
+        matTooltip="Tooltips after the element"
+        matTooltipPosition="after">
+        Tooltip
+    </button>
+    <button mat-raised-button
+        matTooltip="Tooltip left the element"
+        matTooltipPosition="left">
+        Tooltip
+    </button>
+    <button mat-raised-button
+        matTooltip="Disable tooltip"
+        matTooltipDisabled="true">
+        Disable tooltip
+    </button>
+  </mat-card-content>
+</mat-card>

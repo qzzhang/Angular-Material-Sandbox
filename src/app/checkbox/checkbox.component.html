@@ -1,0 +1,102 @@
+   <h2>Cards and lists of Checkboxes</h2>
+<mat-card>
+    <mat-card-content>
+
+    <h2>Basic Checkbox Example</h2>
+      <mat-list>
+        <mat-list-item>
+          <mat-checkbox checked="true">Checkbox Checked</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox unchecked="true">Checkbox UnChecked</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox indeterminate="true">Checkbox Indeterminate</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox labelPosition="before">Checkbox Label before</mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox labelPosition="after">Checkbox Label after</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox disableRipple=true>Checkbox Ripple Disabled</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox disabled=true>Checkbox Disabled</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox color="primary" checked=true>Checkbox Theme Primary</mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-checkbox color="warn" checked=true>Checkbox Theme Warn</mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Angular Checkbox configuration</h2>
+    <section class="example-section">
+        <mat-checkbox class="example-margin" [(ngModel)]="IsChecked">Checked</mat-checkbox><br />
+        <mat-checkbox class="example-margin" [(ngModel)]="IsIndeterminate">Indeterminate</mat-checkbox><br />
+        <mat-checkbox class="example-margin" [(ngModel)]="IsDisabled">Disabled</mat-checkbox>
+    </section>
+    
+    <section class="example-section">
+        <label class="example-margin">Angular Checkbox Alignment:</label>
+        <mat-radio-group [(ngModel)]="LabelAlign">
+            <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
+            <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <h2 class="example-h2">Result</h2>
+    <section class="example-section">
+      <mat-checkbox class="example-margin"
+                    (change)="OnChange($event)"
+                    (indeterminateChange)="OnIndeterminateChange($event)"
+                    [(checked)]="IsChecked"
+                    [(indeterminate)]="IsIndeterminate"
+                    [labelPosition]="LabelAlign"
+                    [disabled]="IsDisabled">
+          I am a Checkbox
+      </mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Input textarea</h2>
+      <mat-form-field class="example-width">
+          <textarea matInput placeholder="Leave a comment"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+</mat-card>
+
+<!--
+<mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Dropdown</h2>
+        <mat-select placeholder="Select City">
+            <mat-option *ngFor="let city of cities" [value]="city.id"> {{city.name}}</mat-option>
+        </mat-select>
+    </mat-card-content>
+</mat-card>
+-->
+<mat-card>
+  <mat-card-content>
+    <mat-slider></mat-slider><br />
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+  </mat-card-content>
+</mat-card>
+
