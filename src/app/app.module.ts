@@ -20,6 +20,7 @@ import { MaterialModule } from './material/material.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ToolbarsComponent } from './toolbars/toolbars.component';
 import { TablesComponent } from './tables/tables.component';
+import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TablesComponent } from './tables/tables.component';
     DatepickerComponent,
     ButtonsComponent,
     ToolbarsComponent,
-    TablesComponent
+    TablesComponent,
+    TableExpandableRowsComponent
   ],
   imports: [
     BrowserModule,
