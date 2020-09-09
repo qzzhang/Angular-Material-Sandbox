@@ -21,6 +21,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { ToolbarsComponent } from './toolbars/toolbars.component';
 import { TablesComponent } from './tables/tables.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
+import { TableAddRemoveShuffleColumnsComponent } from './table-add-remove-shuffle-columns/table-add-remove-shuffle-columns.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TableExpandableRowsComponent } from './table-expandable-rows/table-expa
     ButtonsComponent,
     ToolbarsComponent,
     TablesComponent,
-    TableExpandableRowsComponent
+    TableExpandableRowsComponent,
+    TableAddRemoveShuffleColumnsComponent
   ],
   imports: [
     BrowserModule,

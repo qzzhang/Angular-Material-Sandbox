@@ -1,0 +1,26 @@
+<h2>Angular Material Tables!</h2>
+<div>
+    <h3>Table with dynamically add/remov/shuffl-ing columns</h3>
+    <mat-form-field>
+      <mat-label>Filter/Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="addColumn()"> Add column </button>
+    <button mat-raised-button (click)="removeColumn()"> Remove column </button>
+    <button mat-raised-button (click)="shuffle()"> Shuffle </button>
+
+    <table mat-table matSort
+           [dataSource]="dataSource" multiTemplateDataRows
+           class="mat-elevation-z8">
+    
+      <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr> 
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
