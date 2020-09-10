@@ -6,6 +6,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { TablesComponent } from './tables/tables.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
+import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-column.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'datepicker', component: DatepickerComponent},
   {path: 'tables', component: TablesComponent},
   {path: 'table_selection', component: TableSelectionComponent},
+  {path: 'table_sticky_column', component: TableStickyColumnComponent},
   {path: 'table-expandable', component: TableExpandableRowsComponent}
 ];
 

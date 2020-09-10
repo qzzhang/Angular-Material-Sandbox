@@ -23,6 +23,7 @@ import { TablesComponent } from './tables/tables.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
 import { TableAddRemoveShuffleColumnsComponent } from './table-add-remove-shuffle-columns/table-add-remove-shuffle-columns.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
+import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-column.component';
 
 // Other imports
 // import { NavigationModule } from './navigation/navigation.module';
@@ -44,7 +45,8 @@ import { TableSelectionComponent } from './table-selection/table-selection.compo
     TablesComponent,
     TableExpandableRowsComponent,
     TableAddRemoveShuffleColumnsComponent,
-    TableSelectionComponent
+    TableSelectionComponent,
+    TableStickyColumnComponent
   ],
   imports: [
     BrowserModule,
