@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from './periodic_element';
-import { SelectionModel } from '@angular/cdk/collections';
+import { UserData } from './user_data';
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -28,48 +28,42 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
 
+/** Constants used to fill up our data base. */
+const COLORS: string[] = [
+  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
+  'aqua', 'blue', 'navy', 'black', 'gray'
+];
+const NAMES: string[] = [
+  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
+  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
+];
+
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
 @Component({
   selector: 'app-angular-material-tables',
-  templateUrl: './tables.component.html',
+  templateUrl: './tables1.component.html',
   styleUrls: ['./tables.component.css']
 })
 
 export class TablesComponent implements AfterViewInit {
 
-  dataSource: any; // PeriodicElement[];
+  // dataSource: any; // PeriodicElement[];
+  dataSource: MatTableDataSource<UserData>;
   displayedColumns: string[];
-  selection: any;
 
   constructor() {
-      this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-      this.dataSource = ELEMENT_DATA;
-      this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-      this.selection = new SelectionModel<PeriodicElement>(true, []);
-  }
+      // this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
+      // this.dataSource = ELEMENT_DATA;
+      // this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
-  }
+      this.displayedColumns = ['id', 'name', 'progress', 'color'];
+      // Create 100 users
+      const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  masterToggle() {
-    this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: PeriodicElement): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+      // Assign the data to the data source for the table to render
+      this.dataSource = new MatTableDataSource(users);
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -84,4 +78,17 @@ export class TablesComponent implements AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+}
+
+/** Builds and returns a new User. */
+function createNewUser(id: number): UserData {
+  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+
+  return {
+    id: id.toString(),
+    name: name,
+    progress: Math.round(Math.random() * 100).toString(),
+    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+  };
 }

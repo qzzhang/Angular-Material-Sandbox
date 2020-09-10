@@ -1,4 +1,3 @@
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import { PeriodicElement } from './periodic_element';
 import { ELEMENT_DATA } from './element_data';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
@@ -10,14 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-table-add-remove-shuffle-columns',
   templateUrl: './table-add-remove-shuffle-columns.component.html',
-  styleUrls: ['./table-add-remove-shuffle-columns.component.css'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
+  styleUrls: ['./table-add-remove-shuffle-columns.component.css']
 })
 export class TableAddRemoveShuffleColumnsComponent implements AfterViewInit {
 
