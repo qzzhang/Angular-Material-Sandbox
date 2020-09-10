@@ -4,7 +4,7 @@ import { MatMenuListItem } from './menu_items';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-angular-material-nav',
+  selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
@@ -22,13 +22,17 @@ export class NavComponent implements OnInit {
           menuIcon: 'people',
           routerLink: '/people',
           isDisabled: false},
+        { menuLinkText: 'book',
+          menuIcon: 'book',
+          routerLink: 'datepicker',
+          isDisabled: false},
         { menuLinkText: 'Help',
           menuIcon: 'help',
           routerLink: '/help',
           isDisabled: false},
         { menuLinkText: 'Contact',
           menuIcon: 'contact',
-          routerLink: '/contack',
+          routerLink: '/contact',
           isDisabled: true }
     ];
   }

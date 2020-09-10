@@ -129,23 +129,24 @@
 
     <section>
     <h3>Navigate to an angular route on menu click event</h3>
-        <button mat-menu-item 
+       <button mat-menu-item
                 *ngFor="let item of menuListItems" 
                 routerLink="item.routerLink">
         <mat-icon>{{ item.menuIcon }}</mat-icon>
         <span> {{ item.menuLinkText }}</span>
-       </button>
+      </button>
     </section>
 
     <section>
     <h3>Navigate to an angular route on menu click event horizontal</h3>
     <mat-card>
-        <button mat-button
+      <button mat-button
                 *ngFor="let item of menuListItems" 
                 routerLink="item.routerLink">
         <mat-icon>{{ item.menuIcon }}</mat-icon>
         <span> {{ item.menuLinkText }}</span>
-       </button>
+      </button>
+      <button mat-button routerLink="datepicker">Datepicker</button>
     </mat-card>
     </section>
 

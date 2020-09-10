@@ -1,6 +1,20 @@
-<h1>{{ title }}</h1>
-<div>
-<!--
+<!--h1>{{ title }}</h1-->
+
+<mat-toolbar color="primary">
+  <span> {{title}} </span>
+    <!-- logo -->
+    <div class="navbar-brand"></div>
+    <!-- menu -->
+    <button mat-button routerLink="toolbar">Toolbar</button>
+    <button mat-button routerLink="nav">Navigation</button>
+    <button mat-button routerLink="datepicker">Datepicker</button>
+    <button mat-button routerLink="buttons">Buttons</button>
+    <button mat-button routerLink="table-expandable">Expandable Table</button>
+  <!--span> Right Aligned Text </span-->
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+<!--div>
 <app-angular-material-nav></app-angular-material-nav>
 <app-angular-material-datepicker></app-angular-material-datepicker>
 <app-angular-material-menu></app-angular-material-menu>
@@ -8,9 +22,5 @@
 <app-angular-material-buttons></app-angular-material-buttons>
 <app-table-add-remove-shuffle-columns></app-table-add-remove-shuffle-columns>
 <app-table-expandable-rows></app-table-expandable-rows>
--->
-
 <app-angular-material-tables></app-angular-material-tables>
-
-<router-outlet></router-outlet>
-</div>
+</div-->
