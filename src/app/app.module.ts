@@ -22,6 +22,15 @@ import { ToolbarsComponent } from './toolbars/toolbars.component';
 import { TablesComponent } from './tables/tables.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
 import { TableAddRemoveShuffleColumnsComponent } from './table-add-remove-shuffle-columns/table-add-remove-shuffle-columns.component';
+import { TableSelectionComponent } from './table-selection/table-selection.component';
+
+// Other imports
+// import { NavigationModule } from './navigation/navigation.module';
+// import { NavigationComponent } from './navigation/navigation.component';
+// import { UltiMaterialModule } from './ulti-material/ulti-material.module';
+// import { HttpClientModule } from '@angular/common/http';
+// import { LayoutModule } from '@angular/cdk/layout';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +43,8 @@ import { TableAddRemoveShuffleColumnsComponent } from './table-add-remove-shuffl
     ToolbarsComponent,
     TablesComponent,
     TableExpandableRowsComponent,
-    TableAddRemoveShuffleColumnsComponent
+    TableAddRemoveShuffleColumnsComponent,
+    TableSelectionComponent
   ],
   imports: [
     BrowserModule,

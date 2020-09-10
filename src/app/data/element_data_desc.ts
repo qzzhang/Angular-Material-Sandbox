@@ -1,7 +1,14 @@
-// path: app/table-expandable-rows/element_data.ts
-import { PeriodicElement } from './periodic_element';
+// path: app/data/element_data_desc.ts
 
-export const ELEMENT_DATA: PeriodicElement[] = [
+export interface PeriodicElementDesc {
+    name: string;
+    position: number;
+    weight: number;
+    symbol: string;
+    description: string;
+}
+
+export const ELEMENT_DATA_DESC: PeriodicElementDesc[] = [
   {
     position: 1,
     name: 'Hydrogen',

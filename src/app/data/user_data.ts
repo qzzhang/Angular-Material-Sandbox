@@ -1,4 +1,4 @@
-// path: app/tables/user_data.ts
+// path: app/data/user_data.ts
 
 export interface UserData {
     id: string;

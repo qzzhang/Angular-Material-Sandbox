@@ -4,6 +4,8 @@ import { ToolbarsComponent } from './toolbars/toolbars.component';
 import { NavComponent } from './nav/nav.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { TablesComponent } from './tables/tables.component';
+import { TableSelectionComponent } from './table-selection/table-selection.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
 
 const routes: Routes = [
@@ -12,9 +14,17 @@ const routes: Routes = [
   {path: 'nav', component: NavComponent},
   {path: 'buttons', component: ButtonsComponent},
   {path: 'datepicker', component: DatepickerComponent},
+  {path: 'tables', component: TablesComponent},
+  {path: 'table_selection', component: TableSelectionComponent},
   {path: 'table-expandable', component: TableExpandableRowsComponent}
 ];
 
+/* Children routes
+export const AppRoutes: Routes = [
+  { path: '**',
+    loadChildren: './navigation/navigation.module#NavigationModule', pathMatch: 'full' }
+];
+*/
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

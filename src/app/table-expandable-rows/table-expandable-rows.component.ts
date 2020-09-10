@@ -1,10 +1,9 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import { PeriodicElement } from './periodic_element';
-import { ELEMENT_DATA } from './element_data';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { PeriodicElementDesc, ELEMENT_DATA_DESC } from '../data/element_data_desc';
 
 /**
  * @title Table with expandable rows
@@ -25,11 +24,11 @@ export class TableExpandableRowsComponent implements AfterViewInit {
 
   dataSource: any; // PeriodicElement[];
   columnsToDisplay: string[];
-  expandedElement: PeriodicElement | null;
+  expandedElement: PeriodicElementDesc | null;
 
   constructor() {
       this.columnsToDisplay = ['position', 'name', 'weight', 'symbol'];
-      this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+      this.dataSource = new MatTableDataSource<PeriodicElementDesc>(ELEMENT_DATA_DESC);
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -45,5 +44,4 @@ export class TableExpandableRowsComponent implements AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
 }
