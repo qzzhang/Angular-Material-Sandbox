@@ -24,6 +24,9 @@ import { TableExpandableRowsComponent } from './table-expandable-rows/table-expa
 import { TableAddRemoveShuffleColumnsComponent } from './table-add-remove-shuffle-columns/table-add-remove-shuffle-columns.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
 import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-column.component';
+import { TableStickyHeaderComponent } from './table-sticky-header/table-sticky-header.component';
+import { TableStickyFooterComponent } from './table-sticky-footer/table-sticky-footer.component';
+import { NestedMenuComponent } from './nested-menu/nested-menu.component';
 
 // Other imports
 // import { NavigationModule } from './navigation/navigation.module';
@@ -46,7 +49,10 @@ import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-c
     TableExpandableRowsComponent,
     TableAddRemoveShuffleColumnsComponent,
     TableSelectionComponent,
-    TableStickyColumnComponent
+    TableStickyColumnComponent,
+    TableStickyHeaderComponent,
+    TableStickyFooterComponent,
+    NestedMenuComponent
   ],
   imports: [
     BrowserModule,

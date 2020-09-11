@@ -1,6 +1,5 @@
-<!--h1>{{ title }}</h1-->
-
 <mat-toolbar color="primary">
+
   <span> {{title}} </span>
     <!-- logo -->
     <div class="navbar-brand"></div>
@@ -9,10 +8,35 @@
     <button mat-button routerLink="nav">Navigation</button>
     <button mat-button routerLink="datepicker">Datepicker</button>
     <button mat-button routerLink="buttons">Buttons</button>
+
+    <button mat-button [matMenuTriggerFor]="allTables">
+        All Tables
+    </button>
+
+    <mat-menu #allTables="matMenu" yPosition="below">
+      <button mat-menu-item [matMenuTriggerFor]="basicTables">Basic Tables</button>
+      <button mat-menu-item [matMenuTriggerFor]="stickyTables">Sticky Tables</button>
+      <button mat-menu-item routerLink="table_expandable">Expandable Table</button>
+    </mat-menu>
+
+    <mat-menu #basicTables="matMenu">
+      <button mat-menu-item routerLink="tables">Table with Filter/Sort/Pagination</button>
+      <button mat-menu-item routerLink="table_selection">Table with Selection</button>
+    </mat-menu>
+
+    <mat-menu #stickyTables="matMenu">
+      <button mat-menu-item routerLink="table_sticky_header">Sticky Header</button>
+      <button mat-menu-item routerLink="table_sticky_footer">Sticky Footer</button>
+      <button mat-menu-item routerLink="table_sticky_column">Sticky Column</button>
+    </mat-menu>
+    <!--
     <button mat-button routerLink="tables">Tables</button>
     <button mat-button routerLink="table_selection">Table with Selection</button>
+    <button mat-button routerLink="table_sticky_header">Table with Sticky header</button>
+    <button mat-button routerLink="table_sticky_footer">Table with Sticky footer</button>
     <button mat-button routerLink="table_sticky_column">Table with Sticky Column</button>
-    <button mat-button routerLink="table-expandable">Expandable Table</button>
+    <button mat-button routerLink="table_expandable">Expandable Table</button>
+    -->
   <!--span> Right Aligned Text </span-->
 </mat-toolbar>
 <router-outlet></router-outlet>
