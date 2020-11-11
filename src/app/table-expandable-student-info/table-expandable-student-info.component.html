@@ -1,8 +1,3 @@
-<!-- Master Toggle Button -->
-<a mat-raised-button href="javascript:void()" (click)="toggleTableRows()"
-   color="primary">Toggle Rows
-</a>
-
 <table mat-table [dataSource]="dataStudentsList" multiTemplateDataRows>
 
     <ng-container matColumnDef="id">
@@ -68,3 +63,7 @@
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="student-detail-row"></tr>
 
   </table>
+<!-- Master Toggle Button -->
+<a mat-raised-button href="javascript:void()" (click)="toggleTableRows()"
+   color="primary">Toggle Rows
+</a>
