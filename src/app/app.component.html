@@ -16,7 +16,7 @@
     <mat-menu #allTables="matMenu" yPosition="below">
       <button mat-menu-item [matMenuTriggerFor]="basicTables">Basic Tables</button>
       <button mat-menu-item [matMenuTriggerFor]="stickyTables">Sticky Tables</button>
-      <button mat-menu-item routerLink="table_expandable">Expandable Table</button>
+      <button mat-menu-item [matMenuTriggerFor]="expandableTables">Expandable Tables</button>
     </mat-menu>
 
     <mat-menu #basicTables="matMenu">
@@ -28,6 +28,11 @@
       <button mat-menu-item routerLink="table_sticky_header">Sticky Header</button>
       <button mat-menu-item routerLink="table_sticky_footer">Sticky Footer</button>
       <button mat-menu-item routerLink="table_sticky_column">Sticky Column</button>
+    </mat-menu>
+
+    <mat-menu #expandableTables="matMenu">
+      <button mat-menu-item routerLink="table_expandable">Expandable Table Example</button>
+      <button mat-menu-item routerLink="table_expandable_student_info">Expandable Student Info</button>
     </mat-menu>
     <!--
     <button mat-button routerLink="tables">Tables</button>

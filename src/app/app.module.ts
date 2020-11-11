@@ -27,6 +27,7 @@ import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-c
 import { TableStickyHeaderComponent } from './table-sticky-header/table-sticky-header.component';
 import { TableStickyFooterComponent } from './table-sticky-footer/table-sticky-footer.component';
 import { NestedMenuComponent } from './nested-menu/nested-menu.component';
+import { TableExpandableStudentInfoComponent } from './table-expandable-student-info/table-expandable-student-info.component';
 
 // Other imports
 // import { NavigationModule } from './navigation/navigation.module';
@@ -52,7 +53,8 @@ import { NestedMenuComponent } from './nested-menu/nested-menu.component';
     TableStickyColumnComponent,
     TableStickyHeaderComponent,
     TableStickyFooterComponent,
-    NestedMenuComponent
+    NestedMenuComponent,
+    TableExpandableStudentInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,75 @@
+<p>navigation works!</p>
+<div *ngIf="showLoadingIndicator" class="loading-indicator"><mat-spinner></mat-spinner></div>
+<mat-toolbar color="primary">
+    <button 
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span><mat-icon class="logo" svgIcon="logo2"></mat-icon></span>
+    <span class="span-fill-remaining-space"></span>
+    <span>Global Security Research Project System</span>
+    <button 
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="user.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    fixedTopGap="64"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-nav-list>
+      <a mat-list-item >
+        <mat-icon class="icon">home</mat-icon>
+        <span class="label">Home</span>
+      </a>
+      <a mat-list-item >
+        <mat-icon class="developer_board">developer_board</mat-icon>
+        <span class="label">Project</span>
+      </a>
+      <a mat-list-item >
+        <mat-icon class="how_to_reg">how_to_reg</mat-icon>
+        <span class="label">Products</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="people">people</mat-icon>
+        <span class="label">Teams</span>
+      </a>
+      <a mat-list-item [routerLink]="['/vendors']" routerLinkActive>
+        <mat-icon class="store">store</mat-icon>
+        <span class="label">Vendors</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="dashboard">dashboard</mat-icon>
+        <span class="label">Dashboard</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="question_answer">question_answer</mat-icon>
+        <span class="label">Questionnaire</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav 
+    #user
+    position="end">
+    <app-user-panel></app-user-panel>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="material-page-spacing">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -11,9 +11,10 @@ import { TableStickyHeaderComponent } from './table-sticky-header/table-sticky-h
 import { TableStickyFooterComponent } from './table-sticky-footer/table-sticky-footer.component';
 import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-column.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
+import { TableExpandableStudentInfoComponent } from './table-expandable-student-info/table-expandable-student-info.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'buttons', pathMatch: 'full'},
   {path: 'toolbar', component: ToolbarsComponent},
   {path: 'nav', component: NavComponent},
   {path: 'buttons', component: ButtonsComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'table_sticky_header', component: TableStickyHeaderComponent},
   {path: 'table_sticky_footer', component: TableStickyFooterComponent},
   {path: 'table_sticky_column', component: TableStickyColumnComponent},
-  {path: 'table_expandable', component: TableExpandableRowsComponent}
+  {path: 'table_expandable', component: TableExpandableRowsComponent},
+  {path: 'table_expandable_student_info', component: TableExpandableStudentInfoComponent}
 ];
 
 /* Children routes
