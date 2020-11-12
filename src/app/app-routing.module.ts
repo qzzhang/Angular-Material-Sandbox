@@ -11,6 +11,7 @@ import { TableStickyHeaderComponent } from './table-sticky-header/table-sticky-h
 import { TableStickyFooterComponent } from './table-sticky-footer/table-sticky-footer.component';
 import { TableStickyColumnComponent } from './table-sticky-column/table-sticky-column.component';
 import { TableExpandableRowsComponent } from './table-expandable-rows/table-expandable-rows.component';
+import { TableExpandableNestedComponent } from './table-expandable-nested/table-expandable-nested.component';
 import { TableExpandableStudentInfoComponent } from './table-expandable-student-info/table-expandable-student-info.component';
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'table_sticky_footer', component: TableStickyFooterComponent},
   {path: 'table_sticky_column', component: TableStickyColumnComponent},
   {path: 'table_expandable', component: TableExpandableRowsComponent},
-  {path: 'table_expandable_student_info', component: TableExpandableStudentInfoComponent}
+  {path: 'table_expandable_student_info', component: TableExpandableStudentInfoComponent},
+  {path: 'table_expandable_nested', component: TableExpandableNestedComponent}
 ];
 
 /* Children routes

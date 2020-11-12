@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 // Module imports as the development needs grow
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Components exported within this project
@@ -28,6 +28,11 @@ import { TableStickyHeaderComponent } from './table-sticky-header/table-sticky-h
 import { TableStickyFooterComponent } from './table-sticky-footer/table-sticky-footer.component';
 import { NestedMenuComponent } from './nested-menu/nested-menu.component';
 import { TableExpandableStudentInfoComponent } from './table-expandable-student-info/table-expandable-student-info.component';
+import { TableExpandableNestedComponent } from './table-expandable-nested/table-expandable-nested.component';
+import { TableRowComponent } from './table-row/table-row.component';
+import { HasPhoneTableComponent } from './has-phone-table/has-phone-table.component';
+import { HasRelativeTableComponent } from './has-relative-table/has-relative-table.component';
+
 
 // Other imports
 // import { NavigationModule } from './navigation/navigation.module';
@@ -54,12 +59,16 @@ import { TableExpandableStudentInfoComponent } from './table-expandable-student-
     TableStickyHeaderComponent,
     TableStickyFooterComponent,
     NestedMenuComponent,
-    TableExpandableStudentInfoComponent
+    TableExpandableStudentInfoComponent,
+    TableExpandableNestedComponent,
+    TableRowComponent,
+    HasPhoneTableComponent,
+    HasRelativeTableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
     AppRoutingModule
